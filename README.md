@@ -6,6 +6,12 @@ The app stores each session locally using AsyncStorage and displays them in a hi
 
 ![Screenshots](https://github.com/magnum1122/fetal-movement-tracker/blob/3183f7d97a17027384233e8ebcd70efd6c0e3080/Untitled%20design.png)
 ---
+## 📦 APK Download
+
+Download the latest Android APK here:
+
+👉https://github.com/magnum1122/fetal-movement-tracker/releases
+---
 
 ## 🚀 Features
 
