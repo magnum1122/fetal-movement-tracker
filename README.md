@@ -6,6 +6,19 @@ The app stores each session locally using AsyncStorage and displays them in a hi
 
 ![Screenshots](https://github.com/magnum1122/fetal-movement-tracker/blob/3183f7d97a17027384233e8ebcd70efd6c0e3080/Untitled%20design.png)
 ---
+## 🚀 Expo App Preview
+
+You can preview and run the app instantly using **Expo Go** without installing the APK.
+
+### Steps:
+1. Install **Expo Go** from Play Store / App Stor
+2. Open the link below
+3. Scan the QR code or open directly in Expo Go
+
+🔗 Expo Preview Link:  
+https://expo.dev/preview/update?message=Scan+the+QR+with+Expo+GO+app&updateRuntimeVersion=1.0.0&createdAt=2026-01-04T09%3A27%3A42.110Z&slug=exp&projectId=e1bac6c0-b7d3-4d68-b7a0-0167c0c88175&group=10617601-6765-4b1c-900f-c02fcdd93e3c
+
+---
 ## 📦 APK Download
 
 Download the latest Android APK here:
