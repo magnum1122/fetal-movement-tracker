@@ -1,50 +1,115 @@
-# Welcome to your Expo app 👋
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+# 📱 Fetal Movement Tracker — React Native (Expo)
 
-## Get started
+A simple and intuitive mobile app designed for expecting mothers to track fetal movements using a stopwatch-based session timer.
+The app stores each session locally using AsyncStorage and displays them in a history list.
 
-1. Install dependencies
+---
 
-   ```bash
-   npm install
-   ```
+## 🚀 Features
 
-2. Start the app
+* ⏱️ **Stopwatch-based tracking**
+* 💾 **Local session saving using AsyncStorage**
+* 📅 **Human-readable date formatting**
+* 📂 **Context API for global session management**
+* 🔄 **Auto-load saved sessions on startup**
+* 🧹 **Clean & optimized state + storage synchronization**
+* 🎨 **Beautiful UI built with React Native + NativeWind**
 
-   ```bash
-   npx expo start
-   ```
+---
 
-In the output, you'll find options to open the app in a
+## 📦 Tech Stack & Libraries Used
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+| Library                   | Purpose                           |
+| ------------------------- | --------------------------------- |
+| **Expo**                  | App environment & bundler         |
+| **React Native**          | UI components                     |
+| **Expo Router**           | App navigation                    |
+| **NativeWind (Tailwind)** | Styling                           |
+| **AsyncStorage**          | Local persistent storage          |
+| **Context API (React)**   | App-wide session state management |
+| **expo-blur (optional)**  | Modal background blur             |
+| **TypeScript**            | Type safety                       |
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+---
 
-## Get a fresh project
+# ▶️ How to Run the Project
 
-When you're ready, run:
+### **1. Clone the repository**
 
-```bash
-npm run reset-project
+```sh
+git clone https://github.com/magnum1122/fetal-movement-tracker.git
+cd fetal-movement-tracker
 ```
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+### **2. Install dependencies**
 
-## Learn more
+```sh
+npm install
+```
 
-To learn more about developing your project with Expo, look at the following resources:
+### **3. Start the Expo development server**
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+```sh
+npx expo start
+```
 
-## Join the community
+### **4. Run on device**
 
-Join our community of developers creating universal apps.
+* **iOS** → Press `i`
+* **Android** → Press `a`
+* **Expo Go** → Scan QR from terminal
 
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+---
+
+# 🗂 Data Structure (Sessions)
+
+Each fetal movement tracking session is stored in AsyncStorage under the key:
+
+```
+@sessions
+```
+
+### The shape of each record:
+
+```ts
+export type KickSession = {
+  id: string;         // unique timestamp-based ID
+  date: string;       // formatted: "Sunday 12 Oct 2025"
+  timeTaken: string;  // stopwatch value: "02:12"
+};
+```
+
+### Example stored data:
+
+```json
+[
+  {
+    "id": "1736172812930",
+    "date": "Sunday 12 Oct 2025",
+    "timeTaken": "03:42"
+  },
+  {
+    "id": "1736172819099",
+    "date": "Friday 10 Oct 2025",
+    "timeTaken": "01:55"
+  }
+]
+```
+
+---
+
+# 📝 Assumptions Made
+
+1. **User does not require online backup**
+   All data is stored locally using AsyncStorage.
+
+2. **Each session is independent**
+   A saved record does not affect subsequent sessions.
+
+3. **Date formatting** is done using a simple custom formatter, not using a library (to avoid external dependencies).
+
+4. **Sessions are displayed newest-first**
+   Because we prepend new sessions in the array.
+
+5. **User manually saves each session** using the "Save" button.
