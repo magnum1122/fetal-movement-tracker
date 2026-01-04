@@ -4,6 +4,7 @@
 A simple and intuitive mobile app designed for expecting mothers to track fetal movements using a stopwatch-based session timer.
 The app stores each session locally using AsyncStorage and displays them in a history list.
 
+![Screenshots](https://github.com/magnum1122/fetal-movement-tracker/blob/3183f7d97a17027384233e8ebcd70efd6c0e3080/Untitled%20design.png)
 ---
 
 ## 🚀 Features
